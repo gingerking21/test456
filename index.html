@@ -1,7 +1,7 @@
 <html>
 <head><title>Homepage for gingerjackzhang</title>
 
- 
+
 
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,6 +19,31 @@
 .mynavbar {
 	color: white;
 }
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc; 
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
+
 </style>
 
 <nav class="navbar navbar-dark" style="background-color: 5878F5;">
@@ -42,7 +67,7 @@
     </form>
   </div>
 </nav>
-  
+
  </head>
 
 
@@ -59,28 +84,55 @@
 <p style="text-align:center;">This is a paragraph. <br> And I dont know <br> what to write body</p>
 
 
- 
- 
+
+
 <h3 style="text-align:center;">And MHI1001</h3>
 <h4 style="text-align:center;"><i>And MHI1001</i></h4>
 
  <body style="background-color:teal;">
 </body>
- 
- 
+
+
 <h2 style="text-align:center;">HTML Image</h2>
- 
+
 <img src="mhiclass2020.JPG" alt="Class Photo MHI 2020" width="1200" height="900" style = "display: block; margin-left:auto;margin-right:auto;"/>
 
 <img src="sword-shield-169-m-en.jpg" alt="Trulli" width="400" height="230" style = "display: block; margin-left:auto;margin-right:auto;"/>
 <br>
-<p style="text-align:center;"><a href="https://www.linkedin.com/in/jack-zhang-491614186/"class = "color-me" >My Linkedin</a></p>
-<p style="text-align:center;"><a href="https://www.google.ca/"class = "color-me" >Search Engine</a></p>
-<p style="text-align:center;"><a href="https://www.youtube.com/"class = "color-me" >Streaming Website</a></p>
 
 
 
+<button class="accordion">My Linkedin</button>
+<div class="panel">
+  <p style="text-align:center;"><a href="https://www.linkedin.com/in/jack-zhang-491614186/" >Link</a></p>
+</div>
 
+<button class="accordion">Search Engine</button>
+<div class="panel">
+  <p style="text-align:center;"><a href="https://www.google.ca/">Link</a> </p>
+</div>
+
+<button class="accordion">Streaming Website</button>
+<div class="panel">
+<p  style="text-align:center;"><a href="https://www.youtube.com/" >Link</a></p>
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
 
 </body>
 </html>
